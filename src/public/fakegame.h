@@ -18,19 +18,19 @@ class FakeGame : public Drawable, public  InputPawn{
     void handleInput(InputAction action)override{
         switch (action) {
 
-            case MoveDown:
+            case MoveDownAction:
                 printf("down\n");
                 break;
 
-            case MoveUp:
+            case MoveUpAction:
                 printf("up\n");
                 break;
                 
-            case MoveLeft:
+            case MoveLeftAction:
                 printf("left\n");
                 break;
 
-            case MoveRight:
+            case MoveRightAction:
                 printf("rihg\n");
                 break;
 

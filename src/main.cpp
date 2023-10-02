@@ -20,6 +20,9 @@ enum GameState{
 
 
 
+void callthing(){
+    printf("budd\n");
+}
 
 
 
@@ -35,10 +38,10 @@ int main(void) {
     //View * mainmenu= new View;
     Menu* mainMeny=new Menu;
     //mainmenu->AddDrawable(new Button(50,50,100,100,"thing",nullptr));
-    mainMeny->AddButton(new Button(50,50,100,100,"thing",nullptr),0,0);
-    mainMeny->AddButton(new Button(50,160,100,100,"thing",nullptr),0,1);
-    mainMeny->AddButton(new Button(160,50,100,100,"thing",nullptr),1,0);
-    mainMeny->AddButton(new Button(160,160,100,100,"thing",nullptr),1,1);
+    mainMeny->AddButton(new Button(50,50,100,100,"thing",&callthing),0,0);
+    mainMeny->AddButton(new Button(50,160,100,100,"thing",&callthing),0,1);
+    mainMeny->AddButton(new Button(160,50,100,100,"thing",&callthing),1,0);
+    mainMeny->AddButton(new Button(160,160,100,100,"thing",&callthing),1,1);
 
     mainMeny->MoveCursor(0, 0); //when all buttons are added (or atleas 0,0) we need to move cursor to 0,0 so we dont have any nullptr's
 

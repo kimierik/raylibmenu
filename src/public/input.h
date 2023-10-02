@@ -18,10 +18,11 @@
 enum InputAction{
     NullAction,
 
-    MoveUp,
-    MoveDown,
-    MoveLeft,
-    MoveRight,
+    MoveUpAction,
+    MoveDownAction,
+    MoveLeftAction,
+    MoveRightAction,
+    InteractAction,
 };
 
 
@@ -53,10 +54,11 @@ class InputController{
     public:
 
     void InitialiseMap(){
-        keyMap.insert(std::pair<int, int>(KEY_A,MoveLeft));
-        keyMap.insert(std::pair<int, int>(KEY_D,MoveRight));
-        keyMap.insert(std::pair<int, int>(KEY_W,MoveUp));
-        keyMap.insert(std::pair<int, int>(KEY_S,MoveDown));
+        keyMap.insert(std::pair<int, int>(KEY_A,MoveLeftAction));
+        keyMap.insert(std::pair<int, int>(KEY_D,MoveRightAction));
+        keyMap.insert(std::pair<int, int>(KEY_W,MoveUpAction));
+        keyMap.insert(std::pair<int, int>(KEY_S,MoveDownAction));
+        keyMap.insert(std::pair<int, int>(KEY_E,InteractAction));
     }
 
     void HandleInputs(){
@@ -121,7 +123,9 @@ class Menu : public InputPawn, public View{
     }
 
 
-    virtual void Interact(){}// when press interract on button 
+    virtual void Interact(){
+        hoveredButton->ClickEvent();
+    }// when press interract on button 
                              // virtual so we can do something else in inv then just call function that is on button
 
     //adds button to the menu. x and y are cordinates to the button in the keymap
@@ -200,21 +204,26 @@ class Menu : public InputPawn, public View{
         printf("menucontroller action %i\n",action);
         switch (action) {
 
-            case MoveUp:
+            case MoveUpAction:
                 MoveCursor(0, -1);
                 break;
 
-            case MoveDown:
+            case MoveDownAction:
                 MoveCursor(0, 1);
                 break;
 
-            case MoveLeft:
+            case MoveLeftAction:
                 MoveCursor(-1, 0);
                 break;
 
-            case MoveRight:
+            case MoveRightAction:
                 MoveCursor(1, 0);
                 break;
+
+            case InteractAction:
+                Interact();
+                break;
+
             default:
                 printf("unknown key from menucontroller \n");
                 break;
