@@ -5,6 +5,7 @@
 #include "./ui/button.h"
 
 #include "input/input.h"
+#include "input/menu.h"
 #include "raylib.h"
 #include "./public/fakegame.h"
 #include <cstdio>
