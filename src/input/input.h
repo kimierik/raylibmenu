@@ -4,7 +4,6 @@
 
 #include "../ui/button.h"
 #include "../ui/view.h"
-#include "../utils/debug.c"
 #include <map>
 #include <raylib.h>
 #include <utility>
@@ -23,6 +22,7 @@ enum InputAction{
     MoveLeftAction,
     MoveRightAction,
     InteractAction,
+    ChangeMenuAction,
 };
 
 
@@ -59,6 +59,7 @@ class InputController{
         keyMap.insert(std::pair<int, int>(KEY_W,MoveUpAction));
         keyMap.insert(std::pair<int, int>(KEY_S,MoveDownAction));
         keyMap.insert(std::pair<int, int>(KEY_E,InteractAction));
+        keyMap.insert(std::pair<int, int>(KEY_X,ChangeMenuAction));
     }
 
     void HandleInputs(){

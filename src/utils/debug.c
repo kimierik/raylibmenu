@@ -1,9 +1,8 @@
-#ifndef CUSTOM_DEBUG
-#define CUSTOM_DEBUG
 
 #include <execinfo.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "debug.h"
 
 
 /*
@@ -26,4 +25,3 @@ void PrintStackTrace(void){
     free (strings);
 }
 
-#endif

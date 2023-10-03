@@ -2,6 +2,7 @@
 
 #include "input.h"
 
+#include "../utils/debug.h"
 
 
 
@@ -100,37 +101,7 @@ class Menu : public InputPawn, public View{
 
 
     //when we move, we move the cursor
-    void handleInput(InputAction action)override{
-        printf("menucontroller action %i\n",action);
-        switch (action) {
-
-            case MoveUpAction:
-                MoveCursor(0, -1);
-                break;
-
-            case MoveDownAction:
-                MoveCursor(0, 1);
-                break;
-
-            case MoveLeftAction:
-                MoveCursor(-1, 0);
-                break;
-
-            case MoveRightAction:
-                MoveCursor(1, 0);
-                break;
-
-            case InteractAction:
-                Interact();
-                break;
-
-            default:
-                printf("unknown key from menucontroller \n");
-                break;
-        
-        }
-
-    }
+    void handleInput(InputAction action)override;
 
 
 };

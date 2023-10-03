@@ -5,7 +5,6 @@
 #include <raylib.h>
 #include "../input/input.h"
 
-
 class FakeGame : public Drawable, public  InputPawn{
 
     public:
@@ -15,31 +14,7 @@ class FakeGame : public Drawable, public  InputPawn{
         DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
     }
 
-    void handleInput(InputAction action)override{
-        switch (action) {
-
-            case MoveDownAction:
-                printf("down\n");
-                break;
-
-            case MoveUpAction:
-                printf("up\n");
-                break;
-                
-            case MoveLeftAction:
-                printf("left\n");
-                break;
-
-            case MoveRightAction:
-                printf("rihg\n");
-                break;
-
-            default:
-                printf("unknown action playercontroller \n");
-                break;
-        }
-
-    }
+    void handleInput(InputAction action)override;
 
 
 };
