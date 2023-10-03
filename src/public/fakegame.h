@@ -1,9 +1,9 @@
 #pragma once
 
-#include "drawable.h"
+#include "../ui/drawable.h"
 #include <cstdio>
 #include <raylib.h>
-#include "input.h"
+#include "../input/input.h"
 
 
 class FakeGame : public Drawable, public  InputPawn{

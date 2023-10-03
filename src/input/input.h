@@ -2,8 +2,8 @@
 
 
 
-#include "button.h"
-#include "view.h"
+#include "../ui/button.h"
+#include "../ui/view.h"
 #include "../utils/debug.c"
 #include <map>
 #include <raylib.h>

@@ -1,10 +1,10 @@
 
 
-#include "./public/view.h"
+#include "./ui/view.h"
 
-#include "./public/button.h"
+#include "./ui/button.h"
 
-#include "public/input.h"
+#include "input/input.h"
 #include "raylib.h"
 #include "./public/fakegame.h"
 #include <cstdio>
